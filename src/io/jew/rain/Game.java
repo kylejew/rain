@@ -47,6 +47,7 @@ public class Game extends Canvas implements Runnable {
 		Game game = new Game();
 		game.frame.setResizable(false);
 		game.frame.setTitle("Rain");
+		game.frame.add(game);
 	}
 	
 }

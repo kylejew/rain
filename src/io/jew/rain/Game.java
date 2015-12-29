@@ -2,6 +2,8 @@ package io.jew.rain;
 
 import java.awt.Canvas;
 import java.awt.Dimension;
+import java.awt.image.BufferStrategy;
+
 import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable {
@@ -36,11 +38,24 @@ public class Game extends Canvas implements Runnable {
 			e.printStackTrace();
 		}
 	}
+	
+	public void update() {
+		
+	}
+	
+	public void render(){
+		BufferStrategy bs = getBufferStrategy();
+		if (bs == null) {
+			createBufferStrategy(3);
+			return;
+		}
+	}
 
 	@Override
 	public void run() {
 		while (running) {
-
+			update();
+			render();
 		}
 	}
 	
